@@ -138,3 +138,74 @@ function omitCharAt(str, n) {
         return tach.join('');
     }
 }
+
+// --------------------------- bai 10
+// Viết hàm nhận vào 2 số a, b
+// Trả về số gần 100 nhất
+// nearestTo100(89, 180) // 89
+function nearestTo100(a, b) {
+    // viết code ở đây.
+    let result = (Math.abs(a - 100) > Math.abs(b - 100)) ? b : a;
+    return result;
+}
+
+// ---------------------------bai 11
+/* Viết hàm checkInt để kiểm tra hai số nguyên được nhập vào. 
+  Nếu có 1 số âm và một số dương thì trả về true. 
+  Các trường hợp khác trả về false. 
+  Số 0 là số không âm cũng không dương
+  Tham số:
+  - number1: số nguyên thứ nhất
+  - number2: số nguyên thứ hai
+*/
+
+function checkInt(number1, number2) {
+    // viết code ở đây.	
+    if (number1 < 0 && number2 > 0 || number1 > 0 && number2 < 0) return true;
+    return false;
+}
+
+// ------------------------------ bai 11
+/*
+Viết một hàm JavaScript có 1 tham số n trả về tuyệt đối của hiệu só đó và 13, 
+nếu số đó lớn hơn 13 trả về gấp đôi tuyệt đối của hiệu 2 số.
+Example: 
+n = 20 // return 14
+n = 5 // return 8
+
+*/
+function difference(n) {
+    // viết code ở đây.
+    let result = Math.abs(n - 13);
+    if (n > 13) return result * 2;
+    return result;
+}
+
+// ------------------- bai 12
+/* Viết hàm pyString để tạo chuỗi mới thêm "Py" trước chuỗi nhập vào. 
+Nếu chuỗi đã cho đã bắt đầu bằng "Py" thì hãy trả về chuỗi gốc (không cần thêm).
+Tham số:
+- String: chuỗi nhập vào lúc đầu.
+*/
+
+function pyString(String) {
+    // viết code ở đây.
+    if (String.startsWith('Py') == true) return String;
+    return `Py${String}`;
+}
+
+
+// ------------------------- bai 14
+/* Viết hàm toNextChar dùng để thay thế mọi ký tự trong một chuỗi 
+thành ký tự theo sau nó trong bảng chữ cái. Ví dụ: "Hello" chuyển thành "Ifmmp"
+// Tham số:
+// - String: chuỗi nhập vào ban đầu.
+*/
+function toNextChar(str) {
+    // viết code ở đây.	
+    var strArr = str.split("");
+    for (var i = 0; i < str.length; i++) {
+        strArr[i] = String.fromCharCode(str.charCodeAt(i) + 1);
+    }
+    return strArr.join("");
+}
