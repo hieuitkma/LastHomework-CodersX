@@ -32,3 +32,14 @@ function capitalize(str) {
     }
     return convert.join('');
 }
+
+// -------------------------------bai 3
+// Viết hàm lấy extension của một file
+// Example
+// getExtensionFilename("abc.mp3") // "mp3"
+
+function getExtensionFilename(filename) {
+    // viết code ở đây.
+    var strArr = filename.split(".");
+    return strArr[strArr.length - 1];
+}
