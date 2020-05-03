@@ -165,7 +165,7 @@ function checkInt(number1, number2) {
     return false;
 }
 
-// ------------------------------ bai 11
+// ------------------------------ bai 12
 /*
 Viết một hàm JavaScript có 1 tham số n trả về tuyệt đối của hiệu só đó và 13, 
 nếu số đó lớn hơn 13 trả về gấp đôi tuyệt đối của hiệu 2 số.
@@ -181,7 +181,7 @@ function difference(n) {
     return result;
 }
 
-// ------------------- bai 12
+// ------------------- bai 13
 /* Viết hàm pyString để tạo chuỗi mới thêm "Py" trước chuỗi nhập vào. 
 Nếu chuỗi đã cho đã bắt đầu bằng "Py" thì hãy trả về chuỗi gốc (không cần thêm).
 Tham số:
