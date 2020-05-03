@@ -100,3 +100,41 @@ function equal_pt(str) {
     if (countT == countP) return true;
     return false;
 }
+
+// ---------------------------bai 8
+// viết hàm first trả về giá trị đầu tiên của mảng, nếu n được truyền vào thì trả về 1 mảng chứa n 
+// giá trị đầu tiên của mảng (hoặc cả mảng nếu n lớn hơn số phần tử của mảng). Nếu
+// n <= 0 thì trả về mảng trống.
+// Tham số:
+//	- array: mảng gốc
+//	- n: số phần tử trả về
+function first(array, n) {
+    // viết code ở đây.
+    if (n == undefined) {
+        return array.slice(0, 1);
+    }
+    else if (n > 0) {
+        return array.slice(0, n);
+    }
+    else {
+        return [];
+    }
+}
+
+// -------------------------------- bai 9
+//Viết function omitCharAt  trả về chuỗi đã được loại bỏ ký tại vị trí n bất kỳ
+//Lưu ý cho chuỗi 'abcd' :
+// 		element    'a'|'b'|'c'|'d'
+//		index 	    0	|	1	|	2	|	3
+//  n = 1 ------------------- 'acd'
+//  n = 2 ------------------- 'abd'
+
+function omitCharAt(str, n) {
+    // viết code ở đây.	
+    let tach = str.split('');
+    console.log(tach);
+    for (let i = 0; i < tach.length; i++) {
+        tach.splice(n, 1);
+        return tach.join('');
+    }
+}
