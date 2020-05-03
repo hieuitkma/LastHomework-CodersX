@@ -43,3 +43,24 @@ function getExtensionFilename(filename) {
     var strArr = filename.split(".");
     return strArr[strArr.length - 1];
 }
+
+// ---------------------------- bai 4
+// viết hàm lấy ra giá trị lớn nhất trong 3 số nhập vào
+function findMax(a, b, c) {
+    // viết code ở đây.
+    return Math.max(a, b, c);
+}
+
+// ---------------------------- bai 5
+// viết hàm kiểm tra xem một chuỗi bắt đầu bằng "Java" hay không 
+function startWith(str) {
+    // viết code ở đây.
+    let tach = str.split('');
+    console.log(tach);
+    for (var i = 0; tach.length; i++) {
+        if (tach[0] == 'J' && tach[1] == 'a' && tach[2] == 'v' && tach[3] == 'a') {
+            return true;
+        }
+        return false;
+    }
+}
