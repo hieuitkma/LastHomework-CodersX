@@ -209,3 +209,59 @@ function toNextChar(str) {
     }
     return strArr.join("");
 }
+
+// -------------------------- bai 15
+// viết hàm tạo mới một 1 string từ n ký tự từ vị trí đầu và cuối của chuỗi cũ
+// newString("1wyg5yhd45", 2) // "1w45"
+function newString(str, n) {
+    // viết code ở đây.
+    let start = str.slice(0, n);
+    let tach = str.split('');
+    tach.reverse();
+    let result = [];
+    for (let i = n - 1; i >= 0; i--) {
+        console.log(tach[i]);
+        result.push(tach[i]);
+
+    }
+    let end = result.join('');
+    return `${start}${end}`
+}
+ // -------------------------- bai 16
+/* Write a function that splits an array (first argument) into groups 
+the length of size(second argument) and returns them as a two-dimensional array.
+Example
+ chunkArrayInGroups(["a", "b", "c", "d", "e"], 2) // [["a", "b"], ["c", "d"], ["e"]]
+*/
+function chunkArrayInGroups(arr, size) {
+    // write code here.
+    var kq = [], j = 1, temp = [];
+
+    for (var i = 0; i < arr.length; i++) {
+        if (j <= size) {
+            temp.push(arr[i]);
+            j++;
+        }
+        if (j > size || i == arr.length - 1) {
+            j = 1;
+            kq.push(temp);
+            temp = [];
+        }
+    }
+    return kq;
+}
+
+// ----------------------------- bai 17
+/* Write a function return maximum possible sum of some of its k consecutive numbers 
+(numbers that follow each other in order.) of a given array of positive integers
+*/
+function maxOfSumChain(arr, k) {
+    // write code here.
+    arr.sort((a, b) => b - a);
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+        if (i == k - 1) break;
+    }
+    return sum;
+}
