@@ -227,7 +227,7 @@ function newString(str, n) {
     let end = result.join('');
     return `${start}${end}`
 }
- // -------------------------- bai 16
+// -------------------------- bai 16
 /* Write a function that splits an array (first argument) into groups 
 the length of size(second argument) and returns them as a two-dimensional array.
 Example
@@ -264,4 +264,50 @@ function maxOfSumChain(arr, k) {
         if (i == k - 1) break;
     }
     return sum;
+}
+
+
+// ---------------------------- bai 18
+/* Hãy viết một hàm để tìm một số có số lần lặp lại nhiều nhất trong một dãy các số nguyên.
+
+Input: dãy số
+Output: 1 dãy số bao gồm các số có số lần lặp lại nhiều nhất
+
+ví dụ:
+Input: [1,2,3,4,1,2,2,1]
+Output: [1,2]*/
+
+function findMostFrequent(arr) {
+    // 1 : dem so lan xuat hien
+    occurrences = arr.reduce((obj, item) => {
+        if (item in obj) {
+            obj[item]++; // = value
+        } else {
+            obj[item] = 1;
+        }
+        // console.log(item);
+        // console.log(obj);
+        return obj;
+    }, {});
+    // console.log(occurrences) ;
+
+    // 2: push so lan xuat hien vao mang
+    let result = [];
+    for (let key in occurrences) {
+        result.push(occurrences[key]);
+    }
+    // console.log(result);
+
+    // 3: tim max
+    let maxArr = Math.max(...result);
+    // console.log(maxArr);
+
+    // 4: push vao mang moi cai key cua max
+    let resultMax = [];
+    for (let key in occurrences) {
+        if (occurrences[key] === maxArr) {
+            resultMax.push(parseInt(key));
+        }
+    }
+    return resultMax;
 }
