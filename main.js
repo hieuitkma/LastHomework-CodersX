@@ -311,3 +311,60 @@ function findMostFrequent(arr) {
     }
     return resultMax;
 }
+
+
+// ----------------------------- bai 19
+/*
+Hãy viết một hàm để kiểm tra xem có thể sắp xếp các kí tự 
+của 1 chuỗi String cho trước thành 1 chuỗi String cho trước khác không?
+
+Input: 2 chuỗi String
+Output: True hoặc False
+
+ví dụ:
+
+Input: abc cba
+Output: True
+
+Input: abx abb
+Output: False
+*/
+
+function rearrangeChar(str1, str2) {
+    // Viết code tại đây!
+    let test = 0;
+    // console.log(str2.length)
+    for (let i = 0; i < str1.length; i++) {
+        if (str2.indexOf(str1.charAt(i)) !== -1) {
+            console.log(str2.indexOf(str1.charAt(i)))
+            test++;
+        }
+    }
+    // console.log(test)
+    if (test === str1.length) return true;
+    return false;
+}
+
+
+// ---------------------------- bai 20
+/*
+Hãy viết một hàm để tìm giá trị lớn nhất có thể đạt được 
+của hiệu 2 số bất kì trong dãy số
+
+Input: là một dãy số.
+Output: giá trị lớn nhất có thể đạt được của hiệu 2 số bất kì trong dãy số.
+
+Ví dụ:
+
+Input: [1, 2, 3, 8, 9]
+Output: 8 (là hiệu của 9 và 1)
+
+*/
+
+function findmaxDiff(arr) {
+    // Viết code tại đây
+    let max = Math.max(...arr);
+    let min = Math.min(...arr);
+    let result = max - min;
+    return result;
+}
